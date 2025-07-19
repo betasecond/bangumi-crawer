@@ -1,0 +1,76 @@
+---
+alwaysApply: true
+---
+# `uv` Usage Guide
+
+This project uses `uv` for Python environment and package management. `uv` is a fast, all-in-one tool that replaces `pip`, `venv`, `pip-tools`, and other similar utilities.
+
+## Core Concepts
+
+-   **Virtual Environments**: `uv` automatically creates and manages a virtual environment within a `.venv` directory in the project root. You don't need to create it manually.
+-   **Dependencies**: Project dependencies are defined in `[project.dependencies]` and development dependencies in `[project.optional-dependencies]` (or a similar table) within the `pyproject.toml` file.
+-   **Synchronization**: The `uv sync` command installs all necessary dependencies from `pyproject.toml` into the virtual environment, ensuring a reproducible setup. It will also create the virtual environment if it doesn't exist.
+
+## Common Commands
+
+### 1. Initial Project Setup
+
+To set up the project for the first time, simply sync the dependencies. This will also create the virtual environment.
+
+```bash
+uv sync
+```
+
+### 2. Activating the Virtual Environment
+
+While many `uv` commands can be run without explicitly activating the environment (using `uv run`), you can activate it for convenience:
+
+```bash
+# On macOS/Linux
+source .venv/bin/activate
+
+# On Windows
+.venv\\Scripts\\activate
+```
+
+### 3. Adding a Dependency
+
+To add a new runtime dependency:
+
+```bash
+uv add <package-name>
+```
+
+To add a new development dependency (e.g., for testing or linting):
+
+```bash
+uv add --dev <package-name>
+```
+
+These commands will automatically update your `pyproject.toml` file.
+
+### 4. Installing Dependencies
+
+If you have pulled changes that modified `pyproject.toml`, resynchronize your environment:
+
+```bash
+uv sync
+```
+
+### 5. Running Scripts and Commands
+
+To run a script or command within the project's virtual environment without activating it first, use `uv run`:
+
+```bash
+uv run python your_script.py
+uv run pytest
+```
+
+For scripts defined in `[project.scripts]` in `pyproject.toml`, you can run them directly after installation.
+
+For more details, refer to the official [`uv` documentation](https://docs.astral.sh/uv/).
+
+description:
+globs:
+alwaysApply: false
+---

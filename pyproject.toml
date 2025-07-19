@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bangumi-crawer"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "typer[all]",
+    "requests",
+    "python-dotenv",
+    "rich",
+    "pydantic",
+    "openapi-python-client",
+    "jinja2",
+    "httpx",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+bangumi-crawer = "bangumi_crawer.cli:app"

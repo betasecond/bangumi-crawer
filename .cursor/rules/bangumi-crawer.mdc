@@ -1,0 +1,37 @@
+---
+# Bangumi-Crawer Project Setup
+
+This document outlines the necessary steps to set up and initialize the `bangumi-crawer` project.
+
+## 1. Get Access Token
+
+Before you begin, you need to obtain an Access Token from [the bangumi website](https://next.bgm.tv/demo/access-token).
+
+## 2. Configure Environment
+
+1.  Create a `.env` file in the root of the project. You can do this by copying the `.env.template` file if it exists.
+2.  Add the following environment variables to your `.env` file, replacing `YOUR_OWN_ACCESS_TOKEN` with the token you acquired:
+
+    ```env
+    BANGUMI_SWAGGER=https://bangumi.github.io/api/dist.json
+    BANGUMI_ACCESS_TOKEN=YOUR_OWN_ACCESS_TOKEN
+    ```
+
+## 3. Initialize the SDK
+
+To generate the necessary SDK files from the swagger definition, run the following command in your terminal:
+
+```bash
+bangumi-crawer init
+```
+
+This command will:
+
+-   Fetch the `dist.json` from the `BANGUMI_SWAGGER` URL.
+-   Update or create the access SDK based on the API definition.
+
+You can reference the main project file here: [main.py](mdc:main.py)
+description:
+globs:
+alwaysApply: false
+---
