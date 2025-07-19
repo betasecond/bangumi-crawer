@@ -11,3 +11,11 @@ wheels/
 /result/
 /bangumi_sdk/
 /bangumi.json
+/.env
+/.idea/bangumi-crawer.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/ruff.xml
+/.idea/vcs.xml
