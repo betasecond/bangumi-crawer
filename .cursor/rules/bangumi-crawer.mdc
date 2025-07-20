@@ -31,7 +31,3 @@ This command will:
 -   Update or create the access SDK based on the API definition.
 
 You can reference the main project file here: [main.py](mdc:main.py)
-description:
-globs:
-alwaysApply: false
----
